@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #000000;
+  }
+
+  body {
+    background-color: #F4EFE6;
+    color: #000000;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  /* Accessible focus states */
+  *:focus-visible {
+    outline: 3px solid #000000 !important;
+    outline-offset: 2px !important;
+  }
+}
+
+@layer components {
+  /* Neubrutalist Card */
+  .brutal-card {
+    @apply bg-white border-3 md:border-4 border-black shadow-brutal md:shadow-brutal-md transition-all duration-150;
+  }
+
+  .brutal-card-yellow {
+    @apply bg-brutal-yellow border-3 md:border-4 border-black shadow-brutal md:shadow-brutal-md;
+  }
+
+  .brutal-card-cyan {
+    @apply bg-brutal-cyan border-3 md:border-4 border-black shadow-brutal md:shadow-brutal-md;
+  }
+
+  .brutal-card-green {
+    @apply bg-brutal-green border-3 md:border-4 border-black shadow-brutal md:shadow-brutal-md;
+  }
+
+  .brutal-card-pink {
+    @apply bg-brutal-pink border-3 md:border-4 border-black shadow-brutal md:shadow-brutal-md;
+  }
+
+  /* Neubrutalist Button */
+  .brutal-btn {
+    @apply font-bold font-mono uppercase tracking-wider px-4 py-2 border-3 border-black bg-brutal-yellow shadow-brutal transition-all duration-100 select-none;
+  }
+
+  .brutal-btn:hover {
+    @apply -translate-x-[2px] -translate-y-[2px] shadow-brutal-md;
+  }
+
+  .brutal-btn:active {
+    @apply translate-x-[2px] translate-y-[2px] shadow-brutal-press;
+  }
+
+  .brutal-btn:disabled {
+    @apply opacity-50 cursor-not-allowed transform-none shadow-brutal-sm;
+  }
+
+  /* Neubrutalist Badges */
+  .brutal-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 border-2 border-black font-mono font-bold text-xs uppercase shadow-brutal-sm;
+  }
+
+  /* Neubrutalist Input */
+  .brutal-input {
+    @apply font-mono px-3 py-2 border-3 border-black bg-white shadow-brutal focus:shadow-brutal-md focus:outline-none transition-all;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
